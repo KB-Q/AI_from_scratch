@@ -1,0 +1,193 @@
+{
+  "main": {
+    "id": "df7cc08df5f9591a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4af23a140e797b57",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "65da52611da2bb08",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NOTES/boosters - xgb algo.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "boosters - xgb algo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "aa7b3d104ca0ff45",
+    "type": "split",
+    "children": [
+      {
+        "id": "0cdc08d1e507d973",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ce2b82390ea936a0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "11361b7eba5d8f75",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2f957e246184a5e5",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1748cbc95d38ec8e",
+    "type": "split",
+    "children": [
+      {
+        "id": "2e4403fc44949c44",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7fe58f89f4a463aa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "NOTES/boosters - xgb algo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for boosters - xgb algo"
+            }
+          },
+          {
+            "id": "2e6a699a25eb9c73",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "NOTES/boosters xgb.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from boosters xgb"
+            }
+          },
+          {
+            "id": "8c6c044cd3d5f685",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "71eb82eaecd0ab5c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "266065fa73101bee",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "NOTES/boosters - xgb algo.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of boosters - xgb algo"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "65da52611da2bb08",
+  "lastOpenFiles": [
+    "NOTES/boosters.md",
+    "NOTES/boosters - ranking.md",
+    "NOTES/boosters - xgb algo.md",
+    "NOTES/boosters overview.md"
+  ]
+}

@@ -6,3 +6,6 @@
 */checkpoints/*
 */*/checkpoints/*
 */*/*/checkpoints/*
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

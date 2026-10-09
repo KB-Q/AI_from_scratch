@@ -65,8 +65,8 @@ import torch.nn as nn
 REPO = Path(__file__).resolve().parent.parent
 TF_IMAGES = REPO / "08-transformers" / "images"
 AUDIO_IMAGES = REPO / "23-llm-audio" / "images"
-TF_TORCH = REPO / "08-transformers" / "torch"
-AUDIO_TORCH = REPO / "23-llm-audio" / "torch"
+TF_TORCH = REPO / "08-transformers" / "scripts" / "torch"
+AUDIO_TORCH = REPO / "23-llm-audio" / "scripts"
 
 
 def _import_from_path(path, module_name):

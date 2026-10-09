@@ -2,8 +2,8 @@
 Compare all retriever and ranker configurations.
 
 Usage:
-    python3 compare_models.py --data-dir data
-    python3 compare_models.py --data-dir data --include-neural  # includes text-emb and two-tower retrievers
+    python3 22-recsys/scripts/compare_models.py
+    python3 22-recsys/scripts/compare_models.py --include-neural  # includes text-emb and two-tower retrievers
 """
 
 from __future__ import annotations
@@ -89,7 +89,7 @@ def run_pipeline(
 
 def main(argv: Optional[List[str]] = None) -> int:
     p = argparse.ArgumentParser(description="Compare ranker and retriever configurations")
-    p.add_argument("--data-dir", type=str, default="data")
+    p.add_argument("--data-dir", type=str, default=str(Path(__file__).resolve().parent.parent / "data"))
     p.add_argument("--include-neural", action="store_true", help="Include text-emb and two-tower retrievers")
     p.add_argument("--include-cross-encoder", action="store_true", help="Include cross-encoder ranker (slow)")
     p.add_argument("--retrieval-k", type=int, default=400)

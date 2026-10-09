@@ -36,4 +36,4 @@ $$
 \end{align*}
 $$
 
-**Implementation:** [`LogisticRegressionNumpy`](../logreg.py)
+**Implementation:** [`LogisticRegressionNumpy`](../scripts/logreg.py)

@@ -60,7 +60,7 @@ Training has two independent objectives (see the smoke test):
 ## Why "Qwen3"-style and not a plain GPT
 
 The backbone uses the modern internals that distinguish a Qwen3 transformer from
-the vanilla GPT in [08-transformers/torch/gpt_torch.py](../../08-transformers/torch/gpt_torch.py):
+the vanilla GPT in [08-transformers/scripts/torch/gpt_torch.py](../../08-transformers/scripts/torch/gpt_torch.py):
 
 - **RMSNorm** instead of LayerNorm
 - **RoPE** rotary positions instead of additive sinusoidal encodings
@@ -73,14 +73,13 @@ This keeps only the essence. The following ideas from the paper are **not** here
 a second single-codebook path, a **flow-matching Diffusion Transformer**, a
 **BigVGAN-style vocoder**, a semantic tokenizer with a WavLM teacher, streaming
 inference, and instruction/style control. A faithful, fuller build of all of
-that lives in **[`.archive/qwen-tts-multi-file/`](../.archive/qwen-tts-multi-file/)** (6 files, ~12-14M params) if you want
+that lives in **[`scripts/.archive/qwen-tts-multi-file/`](../scripts/.archive/qwen-tts-multi-file/)** (6 files, ~12-14M params) if you want
 to see the complete architecture — start with its `README.md`.
 
 ## Run it
 
 ```bash
-cd 23-llm-audio/torch
-python3 qwen3_tts.py
+python3 23-llm-audio/scripts/qwen3_tts.py
 ```
 
 Builds the model on random data and exercises codec reconstruction,

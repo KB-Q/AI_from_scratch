@@ -16,7 +16,7 @@ def load_planetoid_dataset(dataset_name='cora'):
     CiteSeer: 3327 nodes, 4732 edges, 3703 features, 6 classes
     PubMed: 19717 nodes, 44338 edges, 500 features, 3 classes
     """
-    cache_dir = os.path.join(os.path.dirname(__file__), 'data')
+    cache_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
     os.makedirs(cache_dir, exist_ok=True)
     
     dataset_dir = os.path.join(cache_dir, dataset_name)

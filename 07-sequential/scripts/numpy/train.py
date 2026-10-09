@@ -5,7 +5,7 @@ import urllib.request
 
 def load_text_corpus(corpus_type='shakespeare'):
     """Download and load text corpus for language modeling."""
-    cache_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+    cache_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
     os.makedirs(cache_dir, exist_ok=True)
     
     if corpus_type == 'shakespeare':

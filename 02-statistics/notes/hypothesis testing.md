@@ -52,7 +52,7 @@ $$P(T > t) = \tfrac{1}{2} I_{\nu/(\nu + t^2)}\left(\tfrac{\nu}{2}, \tfrac{1}{2}\
 
 - Pros: works for any CDF, needs no derivative, cannot diverge. Cons: ~80 CDF evaluations per quantile; libraries use rational approximations or Newton steps instead.
 
-**Implementation:** [`normal_cdf()`](../distributions.py#L18-L21), [`t_pdf()`](../distributions.py#L24-L28), [`betainc()`](../distributions.py#L50-L64), [`t_cdf()`](../distributions.py#L75-L77), [`quantile()`](../distributions.py#L80-L97)
+**Implementation:** [`normal_cdf()`](../scripts/distributions.py#L18-L21), [`t_pdf()`](../scripts/distributions.py#L24-L28), [`betainc()`](../scripts/distributions.py#L50-L64), [`t_cdf()`](../scripts/distributions.py#L75-L77), [`quantile()`](../scripts/distributions.py#L80-L97)
 
 ---
 
@@ -76,7 +76,7 @@ $$P(T > t) = \tfrac{1}{2} I_{\nu/(\nu + t^2)}\left(\tfrac{\nu}{2}, \tfrac{1}{2}\
 - Assumptions: independent observations; approximately normal sample means (exact for normal data, approximate by the CLT for moderate $n$). Heavy skew with small $n$ → prefer a permutation test or the bootstrap.
 - **z-test** vs t-test: same statistic with $\sigma$ known (or $n$ large enough that $t_\nu \approx N(0,1)$).
 
-**Implementation:** [`t_test_one_sample()`](../hypothesis_tests.py#L11-L21), [`t_test_two_sample()`](../hypothesis_tests.py#L24-L42)
+**Implementation:** [`t_test_one_sample()`](../scripts/hypothesis_tests.py#L11-L21), [`t_test_two_sample()`](../scripts/hypothesis_tests.py#L24-L42)
 
 ---
 
@@ -94,7 +94,7 @@ Under $H_0$ "both samples come from the same distribution", the group labels are
 - Pros: exact under exchangeability for any $n$; any statistic (median, trimmed mean, AUC, ...).
 - Cons: cost $B$ statistic evaluations; it tests equality of whole distributions, so with unequal variances it is not a pure test of means.
 
-**Implementation:** [`permutation_test()`](../hypothesis_tests.py#L45-L58)
+**Implementation:** [`permutation_test()`](../scripts/hypothesis_tests.py#L45-L58)
 
 ---
 
@@ -116,7 +116,7 @@ Under $H_0$ "both samples come from the same distribution", the group labels are
 - Works for statistics with no closed-form standard error (median, ratios, AUC).
 - Fails or needs care for: very small $n$; extremes (max, min); heavy tails; dependent data (use a block bootstrap). BCa intervals correct the percentile interval for bias and skew.
 
-**Implementation:** [`bootstrap_ci()`](../hypothesis_tests.py#L61-L77)
+**Implementation:** [`bootstrap_ci()`](../scripts/hypothesis_tests.py#L61-L77)
 
 ---
 
@@ -139,7 +139,7 @@ Two error rates (with $V$ = false rejections, $R$ = all rejections):
 - FDR $\le \frac{m_0}{m} q \le q$ for independent or positively dependent tests **(WHY? intuition: null p-values are uniform, so about $m_0 \cdot \frac{kq}{m}$ of them fall below the threshold $\frac{kq}{m}$; among $k$ rejections that is a false fraction of $\frac{m_0}{m}q$)**.
 - Trade-off: Bonferroni keeps FWER at $\alpha$ but loses power as $m$ grows; BH allows a controlled share of false discoveries and keeps much more power.
 
-**Implementation:** [`bonferroni()`](../hypothesis_tests.py#L80-L84), [`benjamini_hochberg()`](../hypothesis_tests.py#L87-L100)
+**Implementation:** [`bonferroni()`](../scripts/hypothesis_tests.py#L80-L84), [`benjamini_hochberg()`](../scripts/hypothesis_tests.py#L87-L100)
 
 ---
 

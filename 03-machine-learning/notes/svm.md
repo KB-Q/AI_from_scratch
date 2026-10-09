@@ -33,7 +33,7 @@ $$
 \end{align*}
 $$
 
-**Implementation:** [`SVM._fit_primal()`](../SVM.py#L94)
+**Implementation:** [`SVM._fit_primal()`](../scripts/SVM.py#L94)
 
 ---
 
@@ -91,6 +91,6 @@ $$
 \end{align*}
 $$
 
-**Implementation:** [`SVM._fit_dual()`](../SVM.py#L131)
+**Implementation:** [`SVM._fit_dual()`](../scripts/SVM.py#L131)
 
 ---

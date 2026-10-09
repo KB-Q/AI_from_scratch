@@ -2,7 +2,7 @@
 
 This note explains **LoRA** and several widely-used **variants** in a way that matches how they’re implemented in practice for Transformers.
 
-If you want to see concrete numbers, run: `python3 08-transformers/numpy/lora_examples.py`.
+If you want to see concrete numbers, run: `python3 08-transformers/scripts/numpy/lora_examples.py`.
 
 ---
 
@@ -224,7 +224,7 @@ where $s$ is a learned vector and $\odot$ is elementwise multiplication. In Tran
 ## How to use the examples
 
 Run:
-- `python3 08-transformers/numpy/lora_examples.py`
+- `python3 08-transformers/scripts/numpy/lora_examples.py`
 
 It prints:
 - $W_0$, $\Delta W$, $W_\text{eff}$

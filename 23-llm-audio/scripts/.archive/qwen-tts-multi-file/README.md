@@ -122,7 +122,7 @@ bug. Data loading and the training loop are intentionally left for the next step
 ## Run the smoke test
 
 ```bash
-cd 23-llm-audio/.archive/qwen-tts-multi-file
+cd 23-llm-audio/scripts/.archive/qwen-tts-multi-file
 python3 qwen_tts.py
 ```
 

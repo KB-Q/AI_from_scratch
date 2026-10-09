@@ -11,7 +11,7 @@ ONE core idea, in one file:
 That is the essence of Qwen3-TTS's 12.5Hz path. This file keeps just enough to
 see it work end to end and train in seconds on a laptop (~1-2M params). The
 full, paper-faithful build (two paths, flow-matching DiT, vocoder, richer
-codec) lives in ../.archive/qwen-tts-multi-file/ and is referenced from notes/tts-qwen3.md.
+codec) lives in .archive/qwen-tts-multi-file/ (next to this file) and is referenced from notes/tts-qwen3.md.
 
 Read the file top to bottom:
     1. Qwen3 primitives   - RMSNorm, RoPE, grouped-query attention, SwiGLU
@@ -43,7 +43,7 @@ import torch.nn.functional as F
 # ---------------------------------------------------------------------------
 # 1. Qwen3 primitives
 #    These are what make the backbone "Qwen3-style" rather than a vanilla GPT
-#    (uses LayerNorm + sinusoidal positions + GELU, see ../../08-transformers/torch/gpt_torch.py).
+#    (uses LayerNorm + sinusoidal positions + GELU, see ../../08-transformers/scripts/torch/gpt_torch.py).
 # ---------------------------------------------------------------------------
 class RMSNorm(nn.Module):
     """Root-mean-square norm: rescale by RMS, no mean subtraction, no bias."""

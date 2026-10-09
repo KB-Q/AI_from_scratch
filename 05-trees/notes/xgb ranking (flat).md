@@ -32,7 +32,7 @@ Output: lambda gradients $\{g_i\}_{i=1}^n$ and Hessians $\{h_i\}_{i=1}^n$
 3. Ensure positive Hessians: $h_i \leftarrow \max(h_i, 10^{-16})$ for all $i$
 4. Return $\{g_i\}_{i=1}^n$, $\{h_i\}_{i=1}^n$
 
-**Implementation:** [`ObjectiveFunctions.compute_lambda_gradients()`](../metrics.py#L171-L233)
+**Implementation:** [`ObjectiveFunctions.compute_lambda_gradients()`](../scripts/metrics.py#L171-L233)
 
 **Key Insight:** LambdaMART computes gradients based on **pairwise comparisons** within each query. The gradient for document $i$ depends on how swapping it with other documents would affect the ranking metric (NDCG). Documents with higher relevance should be ranked higher, and the gradients push the model in that direction.
 
@@ -116,6 +116,6 @@ where:
 - $\text{IDCG@}k$ is the ideal DCG (DCG of perfect ranking by relevance)
 - $\text{rel}_i$ is the relevance label of the document at position $i$
 
-**Implementation:** [`ndcg()`](../metrics.py#L24-L39)
+**Implementation:** [`ndcg()`](../scripts/metrics.py#L24-L39)
 
 ---

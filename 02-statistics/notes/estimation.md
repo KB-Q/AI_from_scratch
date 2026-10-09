@@ -35,7 +35,7 @@ Properties:
 - Can be **biased** in finite samples: $E[\hat\sigma^2] = \frac{n-1}{n}\sigma^2$ (§4).
 - Minimising cross-entropy / log loss in ML is maximum likelihood for a Bernoulli or categorical model; minimising MSE is maximum likelihood under Gaussian noise.
 
-**Implementation:** [`mle_bernoulli()`](../estimation.py#L11-L13), [`mle_normal()`](../estimation.py#L16-L19)
+**Implementation:** [`mle_bernoulli()`](../scripts/estimation.py#L11-L13), [`mle_normal()`](../scripts/estimation.py#L16-L19)
 
 ---
 
@@ -71,7 +71,7 @@ $$p \mid x \sim \text{Beta}(a + k,\ b + n - k)$$
 - **Shrinkage**: $\mu_n = w\bar{x} + (1-w)\mu_0$ with $w = \frac{n/\sigma^2}{n/\sigma^2 + 1/\tau_0^2}$; with few observations the estimate is pulled toward the prior mean.
 - Other conjugate pairs: Gamma–Poisson, Dirichlet–Multinomial (Laplace smoothing in naive Bayes is a Dirichlet prior), Normal-Inverse-Gamma for unknown $\sigma$.
 
-**Implementation:** [`beta_binomial_posterior()`](../estimation.py#L22-L24), [`map_bernoulli()`](../estimation.py#L27-L30), [`beta_credible_interval()`](../estimation.py#L33-L37), [`normal_normal_posterior()`](../estimation.py#L40-L49)
+**Implementation:** [`beta_binomial_posterior()`](../scripts/estimation.py#L22-L24), [`map_bernoulli()`](../scripts/estimation.py#L27-L30), [`beta_credible_interval()`](../scripts/estimation.py#L33-L37), [`normal_normal_posterior()`](../scripts/estimation.py#L40-L49)
 
 ---
 
@@ -94,7 +94,7 @@ $$\text{MSE}(c) = \sigma^4\left[(c(n-1) - 1)^2 + 2(n-1)c^2\right]$$
 2. bias $= \text{mean}(\hat\theta_s) - \theta$; variance $= \text{var}(\hat\theta_s)$
 3. Return bias, variance, bias² + variance
 
-**Implementation:** [`bias_variance()`](../estimation.py#L52-L57)
+**Implementation:** [`bias_variance()`](../scripts/estimation.py#L52-L57)
 
 ---
 

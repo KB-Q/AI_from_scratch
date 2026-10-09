@@ -17,7 +17,7 @@ def load_cora_dataset():
     
     Standard split: 140 train, 500 val, 1000 test nodes
     """
-    cache_dir = os.path.join(os.path.dirname(__file__), 'data')
+    cache_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
     os.makedirs(cache_dir, exist_ok=True)
     
     cora_dir = os.path.join(cache_dir, 'cora')

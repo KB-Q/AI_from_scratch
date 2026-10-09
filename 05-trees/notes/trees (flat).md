@@ -44,7 +44,7 @@ Algorithm (BuildTree):
 	6. Return the node
 2. Return BuildTree($\{1, \ldots, n\}$, 0)
 
-**Implementation:** [`core_cart.py`](../core_cart.py)
+**Implementation:** [`core_cart.py`](../scripts/core_cart.py)
 
 **Key Properties:**
 
@@ -73,7 +73,7 @@ Algorithm:
 	6. Normalize the weights for all $i$: $w_i^{(m+1)} \leftarrow \dfrac{w_i^{(m+1)}}{\sum_{j=1}^{n} w_j^{(m+1)}}$
 3. Final classifier (weighted majority vote): $H(x) = \arg\max_{k \in \{0,\ldots,K-1\}} \sum_{m=1}^{M} \alpha_m \cdot \mathbb{I}(h_m(x) = k)$
 
-**Implementation:** [`core_adaboost.py`](../core_adaboost.py)
+**Implementation:** [`core_adaboost.py`](../scripts/core_adaboost.py)
 
 **Key Insights:**
 
@@ -108,7 +108,7 @@ Algorithm (binary classification):
 	- $F(x) = F_0 + \sum_{m=1}^{M} \eta \cdot h_m(x)$
 	- $P(y=1|x) = \dfrac{1}{1 + e^{-F(x)}}$
 
-**Implementation:** [`core_gbm.py`](../core_gbm.py)
+**Implementation:** [`core_gbm.py`](../scripts/core_gbm.py)
 
 **Key Insights:**
 

@@ -16,7 +16,7 @@ Output: ensemble model $\hat{y}(x)$
 	4. Update the predictions for all $i$: $\hat{y}_i^{(t)} = \hat{y}_i^{(t-1)} + \eta \cdot f_t(x_i)$
 3. Return the final model: $\hat{y}(x) = \hat{y}^{(0)} + \sum_{t=1}^K \eta \cdot f_t(x)$
 
-**Implementation:** [`XGBoost.fit()`](../core_xgb.py#L63-L222)
+**Implementation:** [`XGBoost.fit()`](../scripts/core_xgb.py#L63-L222)
 
 ---
 
@@ -36,7 +36,7 @@ Output: tree node
 	- right = BuildTree($I_R$, $\{g_i\}_{i \in I_R}$, $\{h_i\}_{i \in I_R}$, $d+1$)
 6. Return the internal node
 
-**Implementation:** [`XGBoostTree._build_tree()`](../core_xgb_tree.py#L163-L204)
+**Implementation:** [`XGBoostTree._build_tree()`](../scripts/core_xgb_tree.py#L163-L204)
 
 ---
 
@@ -60,7 +60,7 @@ Output: best split $(j^*, v^*, \text{Gain}^*)$
 		5. If $\text{Gain} > \text{Gain}^*$: $\text{Gain}^* \leftarrow \text{Gain}$, $j^* \leftarrow j$, $v^* \leftarrow v$
 4. Return $(j^*, v^*, \text{Gain}^*)$
 
-**Implementation:** [`XGBoostTree._find_best_split()`](../core_xgb_tree.py#L113-L162)
+**Implementation:** [`XGBoostTree._find_best_split()`](../scripts/core_xgb_tree.py#L113-L162)
 
 ---
 
@@ -72,7 +72,7 @@ $$w_j^* = -\dfrac{G_j}{H_j + \lambda}$$
 
 where $G_j = \sum_{i \in I_j} g_i$ and $H_j = \sum_{i \in I_j} h_i$ for leaf $j$.
 
-**Implementation:** [`_calculate_leaf_weight()`](../core_xgb_tree.py#L61-L75)
+**Implementation:** [`_calculate_leaf_weight()`](../scripts/core_xgb_tree.py#L61-L75)
 
 ---
 
@@ -80,6 +80,6 @@ where $G_j = \sum_{i \in I_j} g_i$ and $H_j = \sum_{i \in I_j} h_i$ for leaf $j$
 
 $$\text{Gain} = \dfrac{1}{2}\left[\dfrac{G_L^2}{H_L + \lambda} + \dfrac{G_R^2}{H_R + \lambda} - \dfrac{G^2}{H + \lambda}\right] - \gamma$$
 
-**Implementation:** [`_calculate_split_gain()`](../core_xgb_tree.py#L91-L112)
+**Implementation:** [`_calculate_split_gain()`](../scripts/core_xgb_tree.py#L91-L112)
 
 ---

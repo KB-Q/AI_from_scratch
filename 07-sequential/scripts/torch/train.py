@@ -68,7 +68,7 @@ class CoLESDataset(Dataset):
 
 def load_text_corpus(corpus_type='wikitext2', max_chars=None):
     """Download and load text corpus for language modeling."""
-    cache_dir = os.path.join(os.path.dirname(__file__), '..', 'data')
+    cache_dir = os.path.join(os.path.dirname(__file__), '..', '..', 'data')
     os.makedirs(cache_dir, exist_ok=True)
     
     if corpus_type == 'wikitext2':

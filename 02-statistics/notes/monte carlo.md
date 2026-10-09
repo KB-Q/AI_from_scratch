@@ -26,7 +26,7 @@ If $U \sim \text{Uniform}(0,1)$ then $X = F^{-1}(U)$ has CDF $F$ **(WHY? $P(F^{-
 - Discrete distributions: return the smallest $k$ with $F(k) \ge u$ (binary search on the cumulative sums) — this is how categorical / multinomial sampling, e.g. LLM token sampling, works.
 - Pros: exact, one uniform per sample, no rejection. Cons: needs $F^{-1}$ in closed form or a numerical inversion (the normal has none; `distributions.py` inverts by bisection); mostly limited to 1-D.
 
-**Implementation:** [`inverse_cdf_sample()`](../monte_carlo.py#L12-L14), [`exponential_ppf()`](../monte_carlo.py#L17-L19)
+**Implementation:** [`inverse_cdf_sample()`](../scripts/monte_carlo.py#L12-L14), [`exponential_ppf()`](../scripts/monte_carlo.py#L17-L19)
 
 ---
 
@@ -44,7 +44,7 @@ Requires a proposal $q$ and a constant $M$ with $p(x) \le M q(x)$ for all $x$.
 - Example: $N(0,1)$ from Laplace(0, 1): $\frac{p(x)}{q(x)} = \sqrt{2/\pi}\, e^{|x| - x^2/2}$ is maximised at $|x| = 1$, giving $M = \sqrt{2e/\pi} \approx 1.32$ and a 76% acceptance rate.
 - Cons: $M$ must be a true bound (hard to find), and it grows exponentially with dimension for product-form proposals, so rejection sampling is a low-dimensional tool.
 
-**Implementation:** [`rejection_sample()`](../monte_carlo.py#L22-L35)
+**Implementation:** [`rejection_sample()`](../scripts/monte_carlo.py#L22-L35)
 
 ---
 
@@ -64,7 +64,7 @@ $$E_p[f(X)] = \int f(x)\frac{p(x)}{q(x)}q(x)\,dx = E_q[f(X)\,w(X)] \approx \frac
 - **Self-normalised IS** for $p$ known only up to a constant: $\hat\mu = \sum_i w_i f(x_i) / \sum_i w_i$; biased by $O(1/n)$, consistent.
 - **Weight degeneracy**: if $q$ has lighter tails than $p$, a few huge weights dominate and the variance can be infinite. Kish's effective sample size $(\sum w_i)^2 / \sum w_i^2$ diagnoses this for self-normalised estimates of general $f$; a proposal tailored to one $f$ (like the $N(4,1)$ above) can have a tiny ESS while estimating that $f$ well.
 
-**Implementation:** [`importance_sampling()`](../monte_carlo.py#L38-L45)
+**Implementation:** [`importance_sampling()`](../scripts/monte_carlo.py#L38-L45)
 
 ---
 
@@ -87,7 +87,7 @@ Build a Markov chain whose stationary distribution is $p$; after a burn-in, the 
 - **Autocorrelation** reduces the information per sample: the effective sample size of a chain is $n / (1 + 2\sum_{k \ge 1} \rho_k)$, with $\rho_k$ the lag-$k$ autocorrelation.
 - **Variants**: Gibbs sampling draws each coordinate from its full conditional (an MH move that is always accepted); Hamiltonian Monte Carlo uses gradients of $\log p$ to make long, high-acceptance moves.
 
-**Implementation:** [`metropolis_hastings()`](../monte_carlo.py#L48-L63)
+**Implementation:** [`metropolis_hastings()`](../scripts/monte_carlo.py#L48-L63)
 
 ---
 

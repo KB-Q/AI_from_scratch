@@ -8,7 +8,7 @@ Files:
 - ranking_models.py: trainable rankers (heuristic, pointwise GBDT, pairwise logreg, XGBoost/LightGBM LambdaRank).
 
 Run:
-cd 22-recsys && python3 pipeline.py --data-dir data --retrieval-k 400 --rank-k 20 --ranker xgboost_lambdarank
+python3 22-recsys/scripts/pipeline.py --retrieval-k 400 --rank-k 20 --ranker xgboost_lambdarank
 """
 
 from __future__ import annotations
@@ -53,7 +53,7 @@ from retrieval_models import (
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--data-dir", type=str, default=str(Path("data").resolve()), help="Directory to download/cache datasets")
+    p.add_argument("--data-dir", type=str, default=str(Path(__file__).resolve().parent.parent / "data"), help="Directory to download/cache datasets")
     p.add_argument("--min-positive-rating", type=int, default=4)
     p.add_argument("--min-user-positives", type=int, default=5)
     p.add_argument("--eval-fraction", type=float, default=0.2)

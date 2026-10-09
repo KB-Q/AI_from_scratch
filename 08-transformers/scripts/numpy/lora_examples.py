@@ -2,7 +2,7 @@
 Tiny, fully-numeric demonstrations of LoRA and common PEFT variants.
 
 Run:
-  python3 08-transformers/numpy/lora_examples.py
+  python3 08-transformers/scripts/numpy/lora_examples.py
 """
 
 from __future__ import annotations

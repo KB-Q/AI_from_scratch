@@ -30,7 +30,7 @@ $$n = \frac{2\sigma^2 (z_{1-\alpha/2} + z_{1-\beta})^2}{\delta^2} \text{ per arm
 - **Proportions** (conversion rates $p_A, p_B$, $\bar{p} = (p_A + p_B)/2$): the variance differs under $H_0$ and $H_1$, so $$n = \frac{\left[z_{1-\alpha/2}\sqrt{2\bar{p}(1-\bar{p})} + z_{1-\beta}\sqrt{p_A(1-p_A) + p_B(1-p_B)}\right]^2}{(p_B - p_A)^2}$$ Detecting 10% → 11% needs about 14,800 users per arm.
 - Low-powered tests that do reach significance overstate the effect (the "winner's curse"): only the noisy draws that happened to be large cross the threshold.
 
-**Implementation:** [`sample_size_means()`](../ab_testing.py#L13-L21), [`power_means()`](../ab_testing.py#L24-L27), [`minimum_detectable_effect()`](../ab_testing.py#L30-L32), [`sample_size_proportions()`](../ab_testing.py#L35-L43)
+**Implementation:** [`sample_size_means()`](../scripts/ab_testing.py#L13-L21), [`power_means()`](../scripts/ab_testing.py#L24-L27), [`minimum_detectable_effect()`](../scripts/ab_testing.py#L30-L32), [`sample_size_proportions()`](../scripts/ab_testing.py#L35-L43)
 
 ---
 
@@ -53,7 +53,7 @@ Checking the p-value repeatedly while data arrive, and stopping at the first $p 
 	- group-sequential designs: spend $\alpha$ across planned looks with stricter early boundaries (O'Brien–Fleming, Pocock, Lan–DeMets $\alpha$-spending);
 	- always-valid p-values / confidence sequences (mixture SPRT), which stay valid under continuous monitoring.
 
-**Implementation:** [`peeking_false_positive_rate()`](../ab_testing.py#L46-L58)
+**Implementation:** [`peeking_false_positive_rate()`](../scripts/ab_testing.py#L46-L58)
 
 ---
 
@@ -75,7 +75,7 @@ $$y^{cv} = y - \theta(x - \bar{x})$$
 - Equivalent to regression adjustment (ANCOVA): regress $y$ on the treatment indicator and $x$. Several covariates → multiple regression; using an ML prediction of $y$ from pre-period features as $x$ is known as CUPAC.
 - Users with no pre-period data (new users) can get $x = $ a constant plus an indicator.
 
-**Implementation:** [`cuped()`](../ab_testing.py#L61-L71)
+**Implementation:** [`cuped()`](../scripts/ab_testing.py#L61-L71)
 
 ---
 
